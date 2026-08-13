@@ -9,8 +9,6 @@
 
 仓库:https://github.com/jasonsun29/ds-balance-card
 
-![卡片示意图:每平台一行,状态点 + 平台名 + 余额/套餐剩余](https://img.shields.io/badge/dsh--plugin-v1.2.0-blue)
-
 ## 支持矩阵
 
 | 平台 | 余额 | Coding Plan / 套餐额度 |
