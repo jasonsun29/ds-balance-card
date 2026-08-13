@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate package.json
+        run: node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+      - name: Validate dsh.client declaration
+        run: node -e "const p=JSON.parse(require('fs').readFileSync('package.json','utf8')); if(!p.dsh||!p.dsh.client||p.dsh.client.platform!=='web') throw new Error('missing dsh.client declaration')"
+      - name: Syntax check Host half
+        run: node --check lib/index.js
+      - name: Syntax check Client half
+        run: node --check lib/client.js

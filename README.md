@@ -1,5 +1,7 @@
 # ds-balance-card
 
+**中文** | [English](README.en.md)
+
 DeepSeek Harness 常驻额度卡片插件:在界面右下角持续显示**各模型平台的账户余额与 Coding Plan 套餐额度**。只要在 DSH 凭证库中配置了对应平台的 API Key,插件会自动识别并逐平台查询。
 
 ## 功能
