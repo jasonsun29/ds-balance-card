@@ -83,6 +83,12 @@ ln -sfn ../plugins/ds-balance-card "$DSH_HOME/profiles/web/node_modules/ds-balan
 - **Host 半**(`lib/index.js`):注册 loopback-only 的 Connection RPC 通道 `/dsbalance`(`fetch-all` 端点),扫描凭证库中已配置的平台 Key,经 `credentials` + `shell` 服务逐一调用各平台余额/配额接口
 - **Client 半**(`lib/client.js`):`shell.overlay` 槽位的 React 卡片,通过 `ctx.connection.rpc` 与 Host 通信,`timer` 服务驱动定时刷新
 
+## 版本演进
+
+- **v1** — 右下角常驻余额卡片:可拖拽(视口边缘保护)、收起/展开、双击复位、每 5 分钟自动刷新;低余额预警(阈值可调、变色、圆点脉冲、预警时加速刷新);密钥不进入浏览器
+- **v1.1** — 多平台余额自动识别(DeepSeek / Moonshot Kimi / 阶跃星辰)+ 多平台 Coding Plan 额度查询(MiniMax / 智谱 Z.ai);暂不支持查询的平台显式标注
+- **v1.2** — 余额与套餐分区(套餐在上、余额在下);查询失败自动重试、服务重启自愈;接口与模型 provider 校准(凭证名兼容、Moonshot 国内/国际站适配、币种按站点区分);金额 2 位小数、双进度条(5h/周)、字体放大
+
 ## License
 
 MIT

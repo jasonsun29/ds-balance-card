@@ -83,6 +83,12 @@ Then refresh the page (or restart `dsh web`). After a first-time install, restar
 - **Host half** (`lib/index.js`): registers a loopback-only Connection RPC channel `/dsbalance` (endpoint `fetch-all`), scans the credential store for configured platform keys, and queries each platform's balance/quota API through the `credentials` + `shell` services
 - **Client half** (`lib/client.js`): a React card in the `shell.overlay` slot that talks to the Host via `ctx.connection.rpc`, refreshed by the `timer` service
 
+## Version history
+
+- **v1** — persistent bottom-right balance card: draggable (viewport-clamped), collapsible, double-click reset, 5-minute auto refresh; low-balance warnings (adjustable threshold, color states, pulsing dot, faster refresh while warning); keys never enter the browser
+- **v1.1** — multi-platform balance auto-detection (DeepSeek / Moonshot Kimi / StepFun) + multi-platform Coding Plan quota queries (MiniMax / Zhipu Z.ai); unsupported-but-configured platforms labeled explicitly
+- **v1.2** — balance and plan sections (plans on top, balances below); automatic retry with self-healing after server restarts; API-to-provider calibration (credential-name compatibility, Moonshot CN/international adaption, per-site currency); 2-decimal money, 5h/weekly progress bars, larger fonts
+
 ## License
 
 MIT
