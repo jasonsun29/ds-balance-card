@@ -21,7 +21,7 @@ Credential names are matched **exactly** (case-sensitive) and probed in the list
 | Platform | Credential names probed (in order) | Query endpoints | Balance | Coding Plan / quota |
 | --- | --- | --- | --- | --- |
 | DeepSeek | `DEEPSEEK_API_KEY` | `api.deepseek.com/user/balance` | ✅ (CNY) | — (no plan) |
-| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅ (USD, cash/voucher split) | — |
+| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅ (CN site CNY / international USD, cash/voucher split) | — |
 | StepFun | `STEPFUN_API_KEY` | `api.stepfun.com/v1/accounts` | ✅ (total top-up / grant split) | — |
 | MiniMax | `MINIMAX_API_KEY` → `MINIMAX_CN_API_KEY` → `MINIMAX_INTL_API_KEY` | `api.minimaxi.com` (CN Coding Plan) → `www.minimax.io` (Token Plan) → `api.minimax.io` | — | ✅ 5h + weekly remaining % |
 | Zhipu Z.ai | `ZAI_API_KEY` → `ZHIPU_API_KEY` → `BIGMODEL_API_KEY` | `api.z.ai` → `open.bigmodel.cn` | — | ✅ 5h window / weekly / tool quota remaining %, incl. plan tier |

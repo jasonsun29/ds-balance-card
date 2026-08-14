@@ -21,7 +21,7 @@ DeepSeek Harness 常驻额度卡片插件:在界面右下角持续显示**各模
 | 平台 | 扫描的凭证名(依次尝试) | 查询接口 | 余额 | Coding Plan / 套餐额度 |
 | --- | --- | --- | --- | --- |
 | DeepSeek | `DEEPSEEK_API_KEY` | `api.deepseek.com/user/balance` | ✅(CNY) | —(无套餐) |
-| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅(USD,含现金/赠送拆分) | — |
+| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅(国内站 CNY / 国际站 USD,含现金/赠送拆分) | — |
 | 阶跃星辰 StepFun | `STEPFUN_API_KEY` | `api.stepfun.com/v1/accounts` | ✅(含总充值/总赠送) | — |
 | MiniMax | `MINIMAX_API_KEY` → `MINIMAX_CN_API_KEY` → `MINIMAX_INTL_API_KEY` | `api.minimaxi.com`(CN Coding Plan)→ `www.minimax.io`(Token Plan)→ `api.minimax.io` | — | ✅ 5h + 周窗口剩余 % |
 | 智谱 Z.ai | `ZAI_API_KEY` → `ZHIPU_API_KEY` → `BIGMODEL_API_KEY` | `api.z.ai` → `open.bigmodel.cn` | — | ✅ 5h 窗口 / 周配额 / 工具额度剩余 %,含套餐档位 |
