@@ -16,14 +16,24 @@ DeepSeek Harness 常驻额度卡片插件:在界面右下角持续显示**各模
 
 ## 平台支持矩阵
 
-| 平台 | 凭证名 | 余额 | Coding Plan / 套餐额度 |
-| --- | --- | --- | --- |
-| DeepSeek | `DEEPSEEK_API_KEY` | ✅ `GET /user/balance` | —(无套餐) |
-| Moonshot Kimi | `MOONSHOT_API_KEY` | ✅(USD,含现金/赠送拆分) | — |
-| 阶跃星辰 StepFun | `STEPFUN_API_KEY` | ✅(含总充值/总赠送) | — |
-| MiniMax | `MINIMAX_API_KEY` | — | ✅ Coding Plan(国内)/ Token Plan(国际),5h + 周窗口剩余 % |
-| 智谱 Z.ai | `ZAI_API_KEY` / `ZHIPU_API_KEY` / `BIGMODEL_API_KEY` | — | ✅ Coding Plan,5h 窗口 / 周配额 / 工具额度剩余 %,含套餐档位 |
-| OpenAI / Anthropic / Google Gemini / xAI / 火山方舟 / 阿里云百炼 / 百度千帆 / 腾讯混元 / 讯飞星火 | 见源码 `PLATFORMS` | ❌ | ❌ 配置了 Key 会显示「暂不支持查询」 |
+凭证名**精确匹配**(大小写敏感),插件按表内顺序依次探测;不在名单里的名字不会被识别。
+
+| 平台 | 扫描的凭证名(依次尝试) | 查询接口 | 余额 | Coding Plan / 套餐额度 |
+| --- | --- | --- | --- | --- |
+| DeepSeek | `DEEPSEEK_API_KEY` | `api.deepseek.com/user/balance` | ✅(CNY) | —(无套餐) |
+| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅(USD,含现金/赠送拆分) | — |
+| 阶跃星辰 StepFun | `STEPFUN_API_KEY` | `api.stepfun.com/v1/accounts` | ✅(含总充值/总赠送) | — |
+| MiniMax | `MINIMAX_API_KEY` → `MINIMAX_CN_API_KEY` → `MINIMAX_INTL_API_KEY` | `api.minimaxi.com`(CN Coding Plan)→ `www.minimax.io`(Token Plan)→ `api.minimax.io` | — | ✅ 5h + 周窗口剩余 % |
+| 智谱 Z.ai | `ZAI_API_KEY` → `ZHIPU_API_KEY` → `BIGMODEL_API_KEY` | `api.z.ai` → `open.bigmodel.cn` | — | ✅ 5h 窗口 / 周配额 / 工具额度剩余 %,含套餐档位 |
+| OpenAI | `OPENAI_API_KEY` | — | ❌ | ❌ 显示「暂不支持查询」 |
+| Anthropic | `ANTHROPIC_API_KEY` | — | ❌ | ❌ |
+| Google Gemini | `GEMINI_API_KEY` → `GOOGLE_API_KEY` | — | ❌ | ❌ |
+| xAI Grok | `XAI_API_KEY` | — | ❌ | ❌ |
+| 火山方舟 | `ARK_API_KEY` → `ARK_ACCESS_KEY` → `VOLC_ACCESSKEY` | — | ❌ | ❌ |
+| 阿里云百炼 | `DASHSCOPE_API_KEY` | — | ❌ | ❌ |
+| 百度千帆 | `QIANFAN_API_KEY` → `BAIDU_QIANFAN_API_KEY` | — | ❌ | ❌ |
+| 腾讯混元 | `HUNYUAN_API_KEY` | — | ❌ | ❌ |
+| 讯飞星火 | `SPARK_API_KEY` → `IFLYTEK_API_KEY` | — | ❌ | ❌ |
 
 > 配置了 Key 但平台暂无官方查询接口时,卡片会明确标注「暂不支持查询」,不会静默忽略。
 

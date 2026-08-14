@@ -16,14 +16,24 @@ A persistent quota card plugin for **DeepSeek Harness**: shows account balances 
 
 ## Platform support matrix
 
-| Platform | Credential name | Balance | Coding Plan / quota |
-| --- | --- | --- | --- |
-| DeepSeek | `DEEPSEEK_API_KEY` | ✅ `GET /user/balance` | — (no plan) |
-| Moonshot Kimi | `MOONSHOT_API_KEY` | ✅ (USD, cash/voucher split) | — |
-| StepFun | `STEPFUN_API_KEY` | ✅ (total top-up / grant split) | — |
-| MiniMax | `MINIMAX_API_KEY` | — | ✅ Coding Plan (CN) / Token Plan (international), 5h + weekly remaining % |
-| Zhipu Z.ai | `ZAI_API_KEY` / `ZHIPU_API_KEY` / `BIGMODEL_API_KEY` | — | ✅ Coding Plan, 5h window / weekly / tool quota remaining %, incl. plan tier |
-| OpenAI / Anthropic / Google Gemini / xAI / Volcengine Ark / Aliyun Bailian / Baidu Qianfan / Tencent Hunyuan / iFlytek Spark | see `PLATFORMS` in source | ❌ | ❌ a configured key shows "暂不支持查询" (query not supported yet) |
+Credential names are matched **exactly** (case-sensitive) and probed in the listed order; names outside the list are never picked up.
+
+| Platform | Credential names probed (in order) | Query endpoints | Balance | Coding Plan / quota |
+| --- | --- | --- | --- | --- |
+| DeepSeek | `DEEPSEEK_API_KEY` | `api.deepseek.com/user/balance` | ✅ (CNY) | — (no plan) |
+| Moonshot Kimi | `MOONSHOT_API_KEY` → `MOONSHOTAI_API_KEY` | `api.moonshot.cn` → `api.moonshot.ai` | ✅ (USD, cash/voucher split) | — |
+| StepFun | `STEPFUN_API_KEY` | `api.stepfun.com/v1/accounts` | ✅ (total top-up / grant split) | — |
+| MiniMax | `MINIMAX_API_KEY` → `MINIMAX_CN_API_KEY` → `MINIMAX_INTL_API_KEY` | `api.minimaxi.com` (CN Coding Plan) → `www.minimax.io` (Token Plan) → `api.minimax.io` | — | ✅ 5h + weekly remaining % |
+| Zhipu Z.ai | `ZAI_API_KEY` → `ZHIPU_API_KEY` → `BIGMODEL_API_KEY` | `api.z.ai` → `open.bigmodel.cn` | — | ✅ 5h window / weekly / tool quota remaining %, incl. plan tier |
+| OpenAI | `OPENAI_API_KEY` | — | ❌ | ❌ shows "暂不支持查询" |
+| Anthropic | `ANTHROPIC_API_KEY` | — | ❌ | ❌ |
+| Google Gemini | `GEMINI_API_KEY` → `GOOGLE_API_KEY` | — | ❌ | ❌ |
+| xAI Grok | `XAI_API_KEY` | — | ❌ | ❌ |
+| Volcengine Ark | `ARK_API_KEY` → `ARK_ACCESS_KEY` → `VOLC_ACCESSKEY` | — | ❌ | ❌ |
+| Aliyun Bailian | `DASHSCOPE_API_KEY` | — | ❌ | ❌ |
+| Baidu Qianfan | `QIANFAN_API_KEY` → `BAIDU_QIANFAN_API_KEY` | — | ❌ | ❌ |
+| Tencent Hunyuan | `HUNYUAN_API_KEY` | — | ❌ | ❌ |
+| iFlytek Spark | `SPARK_API_KEY` → `IFLYTEK_API_KEY` | — | ❌ | ❌ |
 
 > Platforms whose key is configured but which expose no official query API are listed explicitly as unsupported — never silently ignored.
 
