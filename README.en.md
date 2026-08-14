@@ -4,6 +4,8 @@
 
 A persistent quota card plugin for **DeepSeek Harness**: shows account balances and Coding Plan quotas for every configured model platform in the bottom-right corner of the web UI. Configure an API key in the DSH credential store and the plugin detects it automatically.
 
+![ds-balance-card card screenshot](https://github.com/jasonsun29/ds-balance-card/raw/main/docs/screenshot.png)
+
 ## Features
 
 - 🪟 Persistent card in the bottom-right corner, always visible across sessions (mounted in the frame-wide `shell.overlay` slot)
